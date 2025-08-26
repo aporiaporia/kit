@@ -11,49 +11,28 @@
       text-align: center;
       padding: 2rem;
     }
-    .character-button {
+
+    .character-img {
+      width: 150px;
       margin: 1rem;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 12px;
+      border-radius: 15px;
       cursor: pointer;
-      font-size: 1.2rem;
-      background: #d18aff;
-      color: white;
-      transition: 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .character-button:hover {
-      background: #a75ce3;
-    }
-    .gift {
-      display: none;
-      margin-top: 2rem;
-      font-size: 1.2rem;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+
+    .character-img:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
   <h1>🎉 Happy Birthday, [Friend’s Name]! 🎉</h1>
-  <p>Click a character to see your gift!</p>
+  <p>Click a character to see their gift!</p>
 
-  <button class="character-button" onclick="showGift('char1')">Character 1</button>
-  <button class="character-button" onclick="showGift('char2')">Character 2</button>
-  <button class="character-button" onclick="showGift('char3')">Character 3</button>
-
-  <div id="char1" class="gift">🎁 Gift for Character 1: A magical sword!</div>
-  <div id="char2" class="gift">🎁 Gift for Character 2: A fluffy plushie!</div>
-  <div id="char3" class="gift">🎁 Gift for Character 3: A cake with candles!</div>
-
-  <script>
-    function showGift(id) {
-      document.querySelectorAll('.gift').forEach(g => g.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+  <!-- Each image links to a new page -->
+  <a href="char1.html"><img src="char1.png" class="character-img" alt="Character 1"></a>
+  <a href="char2.html"><img src="char2.png" class="character-img" alt="Character 2"></a>
+  <a href="char3.html"><img src="char3.png" class="character-img" alt="Character 3"></a>
 </body>
 </html>
-
