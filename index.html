@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5e1ff;
+      text-align: center;
+      padding: 2rem;
+    }
+    .character-button {
+      margin: 1rem;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      background: #d18aff;
+      color: white;
+      transition: 0.3s;
+    }
+    .character-button:hover {
+      background: #a75ce3;
+    }
+    .gift {
+      display: none;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday, [Friend’s Name]! 🎉</h1>
+  <p>Click a character to see your gift!</p>
+
+  <button class="character-button" onclick="showGift('char1')">Character 1</button>
+  <button class="character-button" onclick="showGift('char2')">Character 2</button>
+  <button class="character-button" onclick="showGift('char3')">Character 3</button>
+
+  <div id="char1" class="gift">🎁 Gift for Character 1: A magical sword!</div>
+  <div id="char2" class="gift">🎁 Gift for Character 2: A fluffy plushie!</div>
+  <div id="char3" class="gift">🎁 Gift for Character 3: A cake with candles!</div>
+
+  <script>
+    function showGift(id) {
+      document.querySelectorAll('.gift').forEach(g => g.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
 
