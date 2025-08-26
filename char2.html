@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift from Kanade</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7d1;
+      text-align: center;
+      padding: 2rem;
+    }
+    #caption {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    #story-img {
+      max-width: 80%;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    #story-img:hover {
+      transform: scale(1.02);
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      padding: 0.8rem 1.5rem;
+      background: #d18aff;
+      color: white;
+      border-radius: 12px;
+      transition: background 0.3s;
+    }
+    a.back:hover {
+      background: #a75ce3;
+    }
+
+    /* Hidden download section */
+    #download-section {
+      display: none;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    }
+    #download-section h2 {
+      margin-bottom: 1rem;
+    }
+    .thumb {
+      max-width: 150px;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1 id="caption">🎁 Kanade’s Gift Appears...</h1>
+
+  <!-- Storyboard image -->
+  <img id="story-img" src="https://i.imgur.com/example1.png" alt="Storyboard" onclick="nextSlide()">
+
+  <br>
+  <a href="index.html" class="back">⬅ Back to Characters</a>
+
+  <!-- Hidden Download Section -->
+  <div id="download-section">
+    <h2>📥 Download The Panels!</h2>
+    <p>right-click the image to save it, or tap and hold on mobile!</p>
+    <div>
+      <a href="https://i.imgur.com/vQdzhuL.png" download><img src="https://i.imgur.com/vQdzhuL.png" class="thumb"></a>
+      <a href="https://i.imgur.com/dXfifTY.png" download><img src="https://i.imgur.com/dXfifTY.png" class="thumb"></a>
+      <a href="https://i.imgur.com/kz33oPh.png" download><img src="https://i.imgur.com/kz33oPh.png" class="thumb"></a>
+      <a href="https://i.imgur.com/toTk8O7.png" download><img src="https://i.imgur.com/toTk8O7.png" class="thumb"></a>
+      <a href="https://i.imgur.com/dbpp52o.png" download><img src="https://i.imgur.com/dbpp52o.png" class="thumb"></a>
+      <a href="https://i.imgur.com/XUFvgU2.png" download><img src="https://i.imgur.com/XUFvgU2.png" class="thumb"></a>
+      <a href="https://i.imgur.com/tnafy8R.png" download><img src="https://i.imgur.com/tnafy8R.png" class="thumb"></a>
+      <a href="https://i.imgur.com/3XpaBAw.png" download><img src="https://i.imgur.com/3XpaBAw.png" class="thumb"></a>
+      <a href="https://i.imgur.com/uDNfzQ3.png" download><img src="https://i.imgur.com/uDNfzQ3.png" class="thumb"></a>
+      <a href="https://i.imgur.com/NYu75SJ.png" download><img src="https://i.imgur.com/NYu75SJ.png" class="thumb"></a>
+    </div>
+  </div>
+
+  <script>
+    // Array of storyboard panels
+    const panels = [
+      {
+        img: "https://i.imgur.com/vQdzhuL.png",
+        caption: "Oh? Kanade's here to greet you!"
+      },
+      {
+        img: "https://i.imgur.com/dXfifTY.png",
+        caption: "It seems she wants to show you something... Take her hand!"
+      },
+      {
+        img: "https://i.imgur.com/kz33oPh.png",
+        caption: "Let's go! Kanade walks hand in hand with you to somewhere..."
+      },
+       {
+        img: "https://i.imgur.com/toTk8O7.png",
+        caption: "You two arrive at a door..."
+      },
+      {
+        img: "https://i.imgur.com/dbpp52o.png",
+        caption: "Kanade goes to open it and walk inside."
+      },
+      {
+        img: "https://i.imgur.com/XUFvgU2.png",
+        caption: "She tells you to come inside as well!"
+      },
+      {
+        img: "https://i.imgur.com/tnafy8R.png",
+        caption: "It's dark in here... Turn on the light!"
+      },
+      {
+        img: "https://i.imgur.com/3XpaBAw.png",
+        caption: "Woah! Kanade changed her look! But it seems she has something behind her back..."
+      },
+      {
+        img: "https://i.imgur.com/uDNfzQ3.png",
+        caption: "A cake!!!"
+      },
+      {
+        img: "https://i.imgur.com/NYu75SJ.png",
+        caption: "HAPPY BIRTHDAY KIT!!!"
+      }
+    ];
+
+    let current = 0;
+
+    function nextSlide() {
+      current++;
+      if (current >= panels.length) {
+        current = panels.length - 1; // stay on last panel
+        document.getElementById("download-section").style.display = "block"; // show downloads
+      }
+      document.getElementById("story-img").src = panels[current].img;
+      document.getElementById("caption").innerText = panels[current].caption;
+    }
+  </script>
+</body>
+</html>
